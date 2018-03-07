@@ -4,34 +4,9 @@ body {
     font-family: lato;
     color: white;
 }
-
-.center {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+a:hover {
+    color: tomato;
 }
-
-#toplogo {
-    margin-top: 20%;
-    width: 10vw;
-    min-width: 128px;
-    height: auto;
-}
-
-header {
-    background: linear-gradient(45deg, #5cd2ff, #5b67ff, #681ae4);
-    height: 60vh;
-}
-
-.shape-separator {
-    position: relative;
-}
-
-.shape-separator::after {
-    content: '';
-    background-image: url("../images/border.svg");
-    position: absolute;
-    width: 100%;
-    height: 24px;
-    bottom: 0;
+::-webkit-scrollbar{
+    display: none;
 }

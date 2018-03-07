@@ -1,0 +1,32 @@
+a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+#menu {
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 15%;
+    min-width:200px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    min-height: 30vh;
+    margin: -12px 0 0 0;
+    z-index: 1;
+    padding-top: 20px;
+}
+.link{
+    padding: 10px 0 0 0;
+    font-size: 22px;
+    width: 15vw;
+    display: block;
+    color: #000000;
+    padding: .5rem .75rem;
+    transition: all .1s ease-out;
+    border-left: 2px solid #576a85;
+    margin: .5rem;
+    font-weight: 500;
+}
