@@ -1,0 +1,20 @@
+@font-face {
+    font-family: hero;
+    src: url("../fonts/hero light.otf");
+}
+@font-face {
+    font-family: lato;
+    src: url("../fonts/Lato-Hairline.ttf");
+}
+@font-face {
+    font-family: greya;
+    src: url("../fonts/Alegreya.ttf");
+}
+@font-face {
+    font-family: almendra;
+    src: url("../fonts/almendraDisplay-Regular.ttf");
+}
+@font-face {
+    font-family: raleway;
+    src: url("../fonts/raleway-thin.ttf");
+}
