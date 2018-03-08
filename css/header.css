@@ -13,20 +13,4 @@ header {
     position: relative;
     background: linear-gradient(45deg, #5cd2ff, #5b67ff, #681ae4);
     height: 70vh;
-    
 }
-.shape-separator {
-    position: relative;
-    z-index: 2;
-}
-.shape-separator::after {
-    content: '';
-    background-image: url("../images/border.svg");
-    position: absolute;
-    width: 85%;
-    height: 24px;
-    bottom: 0;
-    display: grid;
-    margin-right: 0px;
-    right: 0;
-}   

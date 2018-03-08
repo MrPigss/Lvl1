@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/seperator.css">
+    <link rel="stylesheet" href="css/box.css">
     <title>Lvl1</title>
 </head>
 
@@ -19,18 +21,84 @@
         </div>
         <h1 class="center">MrPigss' Testpage.</h1>
     </header>
-    <div class="seperator">
-        <div class="shape-separator"></div>
-    </div>
+    <div class="shape-separator"></div>
     <nav role="navigation">
         <div id="menu">
-            <a href="#sql" class="link">
+            <a href="#SQL" class="link">
                 SQL
             </a>
         </div>
     </nav>
-    <div class="content">
-        <p>aids</p>
+    <div class="content center">
+        <div class="box center" id="SQL">
+            <h2 class="center">SQL</h2>
+            <p>1. Je wil alle gegevens uit de tabel customers zien</p>
+            <code class="codebox">SELECT * FROM customers;</code>
+            <p>2. Geef een lijst met de klantnamen en de stad van alle klanten.</p>
+            <code class="codebox">SELECT `customerName`, `city` FROM customers;</code>
+            <p>3. Geef een lijst met alle klantnamen en hun telefoonnummer van de klanten die in Parijs gevestigd zijn.</p>
+            <code class="codebox">SELECT customername, phone, city from customers WHERE city = 'paris';</code>
+            <p>4. Geef een lijst met alle klantnamen van de klanten die gevestigd zijn in Madrid of London.</p>
+            <code class="codebox">SELECT customername, city from customers where city = 'madrid' or city='london';</code>
+            <p>5. Geef een lijst van alle klantnamen van de klanten met een kredietlimiet.</p>
+            <code class="codebox">SELECT customername, creditlimit from customers where creditlimit >0;</code>
+            <p>6. Geef een lijst van alle klantnamen die in Parijs of Madrid wonen met een kredietlimiet >60000.</p>
+            <code class="codebox">SELECT customername, creditlimit, city from customers where creditlimit >0 and (city='madrid' or city='paris');</code>
+            <p>7. Geef een lijst met de klantnamen van alle klanten met een kredietlimiet tussen 50 000 en 100 000.</p>
+            <code class="codebox">SELECT customername, creditlimit from customers where creditlimit between 50000 and 100000;</code>
+            <p>8. Geef een lijst van alle klantnamen die gevestigd zijn in een stad die begint met de letter M.</p>
+            <code class="codebox">SELECT customername, city from customers where city like 'm%';</code>
+            <p>9. Geef een lijst van alle klantnamen die als tweede letter een A hebben in alfabetische orde oplopend.</p>
+            <code class="codebox">SELECT customername from customers where customername like '_a%' order by customername;</code>
+            <p>10. Selecteer een lijst van de steden en landen van alle klanten. Sorteer oplopend op land en vervolgens aflopend
+                op stad.</p>
+            <code class="codebox">SELECT country, city from customers order by country asc, city desc;</code>
+            <p>11. Sommige records in de vorige lijst komen verschillende keren voor (bijv.:France, Paris). Hoe vermijd je dat?</p>
+            <code class="codebox">SELECT  distinct country, city from customers order by country asc, city desc;</code>
+            <p>12. Welke klant heeft de hoogste kredietlimiet?</p>
+            <code class="codebox">SELECT customername, creditlimit from customers order by creditlimit desc limit 1;</code>
+            <code class="codebox">select customername, creditlimit from customers where creditlimit=(select max(creditlimit) from customers);</code>
+            <p>13. Welke klantnamen wonen niet in Madrid met een kredietlimiet >60000</p>
+            <code class="codebox">SELECT customername, creditlimit, city from customers where not city='madrid' and creditlimit>100000;</code>
+            <p>14. Toon een lijst met de ordernummers, datum en status in 2005</p>
+            <code class="codebox">SELECT ordernumber, orderdate, status FROM `orders` WHERE year(orderdate)=2005;</code>
+            <p>15. Welke orders vallen niet in juli of augustus van het jaar 2005?</p>
+            <code class="codebox">SELECT ordernumber, orderdate FROM `orders` WHERE year(orderdate)=2005 and not (month(orderdate)=7 or month(orderdate)=8);</code>
+            <p>16. Welke orders hebben geen commentaar?</p>
+            <code class="codebox">SELECT ordernumber,comments FROM `orders` WHERE comments is null;</code>
+            <p>17. Welke orders hebben wel commentaar?</p>
+            <code class="codebox">SELECT ordernumber,comments FROM `orders` WHERE not comments is null;</code>
+            <code class="codebox">SELECT ordernumber,comments FROM `orders` WHERE comments is not null;</code>
+            <p>18. Geef een lijst met de contactvoornaam en de contactachternaam van alle klanten (in één veld volledigenaam).</p>
+            <code class="codebox">SELECT concat(contactfirstname,' ',contactlastname) as volledigenaam FROM `customers`;</code>
+            <p>19. In de tabel products staat de aankoopprijs van een product. Maak een lijst met de naam van het product,<br> de aankoopprijs van het product en de verkoopprijs als het winstpercentage 33% en het btwpercentage 21% is.</p>
+            <code class="codebox">SELECT productname, buyprice, buyprice*1.33*1.21 AS sellprice FROM products;</code>
+            <p>20. Hoeveel producten worden er verkocht?</p>
+            <code class="codebox">SELECT count(*) as aantalProducten FROM `products`;</code>
+            <p>21. Wat is de gemiddelde prijs per product ?</p>
+            <code class="codebox">SELECT avg(buyprice) AS gemiddeldePrijs FROM products;</code>
+            <p>22. Wat is het aantal producten per productlijn (categorie).</p>
+            <code class="codebox">select productline, count(productcode) as aantalProducten from products group by productline;</code>
+            <p>23. Wat is het duurste product per productline? (naam product, prijs, productline)</p>
+            <code class="codebox">select productline, productname, buyprice from products </code>
+            <p>24. Wat is het aantal klanten per stad? Maak een lijst met het aantal in aflopende volgorde.</p>
+            <code class="codebox">SELECT city, count(customernumber) as aantalKlanten FROM `customers` group by city order by count(customernumber) desc;</code>
+            <code class="codebox">SELECT city, count(*) as aantalKlanten FROM `customers` group by city order by count(*) desc;</code>
+            <code class="codebox">SELECT city, count(*) as aantalKlanten FROM `customers` group by city order by aantalKlanten desc;</code>
+            <p>25. Maak een lijst met het klantnaam, overeenkomstige ordernummers en orderdatum.</p>
+            <code class="codebox">SELECT customers.customername, orders.ordernumber,orders.orderdate FROM customers, orders where customers.customernumber = orders.customernumber order by customers.customernumber, orders.ordernumber;</code>
+            <p>26. Hoeveel orders zijn er per klant? Aantal orders aflopend weergeven.</p>
+            <code class="codebox">SELECT customers.customernumber, count(orders.ordernumber) as aantalOrders from customers, orders where customers.customernumber = orders.customernumber group by customers.customernumber order by count(orders.ordernumber) desc;</code>
+            <p>27. Welke klant heeft het meeste orders?</p>
+            <code class="codebox">SELECT customers.customername, customers.customernumber, count(orders.ordernumber) as aantalOrders from customers, orders where customers.customernumber = orders.customernumber group by customers.customernumber order by count(orders.ordernumber) desc limit 1;</code>
+            <p>28. Wat is het ordertotaal per order van de orders in 2005 oplopend gesorteerd op ordernummer?</p>
+            <code class="codebox">SELECT orders.ordernumber, sum(orderdetails.quantityordered*orderdetails.priceeach)as ordertotaal, year(orders.orderdate) as jaar from orders, orderdetails where orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)=2005 group by orderDetails.ordernumber order by orderDetails.ordernumber;</code>
+            <p>29. Wat is de omzet in 2005?</p>
+            <code class="codebox">SELECT sum(orderdetails.quantityordered*orderdetails.priceeach) as omzet, year(orders.orderdate) as jaar from orders, orderdetails where orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)=2005;</code>
+            <p>30. Wat is de omzet per klant in 2005 in dalende volgorde?</p>
+            <code class="codebox">SELECT customers.customername, sum(orderdetails.quantityordered*orderdetails.priceeach) as omzetPerKlant, year(orders.orderdate) from customers, orders, orderdetails where customers.customernumber = orders.customernumber and orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)= 2005 group by customers.customername order by sum(orderdetails.quantityordered*orderdetails.priceeach) desc;</code>
+            <code class="codebox">SELECT customers.customername, sum(orderdetails.quantityordered*orderdetails.priceeach) as omzetPerKlant, year(orders.orderdate) from customers, orders, orderdetails where customers.customernumber = orders.customernumber and orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)= 2005 group by customers.customername order by omzetPerKlant desc;</code>
+        </div>
     </div>
 </body>
 

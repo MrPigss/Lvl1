@@ -6,15 +6,19 @@ body {
 }
 a:hover {
     color: tomato;
+    background: #1d375d;
 }
 ::-webkit-scrollbar{
     display: none;
 }
 .content{
-    color: darkgray;
     margin-left: 20%;
     float: right;
-    /*width: 80%;*/
     margin-left: 15%;
     min-width: calc(100vw - 200px);
+}
+p{
+    font-weight: bold;
+    font-size: 1.1em;
+    font-family: greya;
 }
