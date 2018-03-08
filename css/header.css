@@ -13,4 +13,5 @@ header {
     position: relative;
     background: linear-gradient(45deg, #5cd2ff, #5b67ff, #681ae4);
     height: 70vh;
+    min-height: 240px;
 }
