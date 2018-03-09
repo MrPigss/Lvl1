@@ -30,3 +30,7 @@ a {
     margin: .5rem;
     font-weight: 500;
 }
+a.link:hover{
+    color: tomato;
+    background: #1d375d;
+}

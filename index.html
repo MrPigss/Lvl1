@@ -30,6 +30,9 @@
             <a href="#SQL" class="link">
                 SQL
             </a>
+            <a href="#proj1" class="link titel">
+                Projecten
+            </a>
         </div>
     </nav>
     <div class="content center">
@@ -101,6 +104,12 @@
             <p>30. Wat is de omzet per klant in 2005 in dalende volgorde?</p>
             <code class="codebox">SELECT customers.customername, sum(orderdetails.quantityordered*orderdetails.priceeach) as omzetPerKlant, year(orders.orderdate) from customers, orders, orderdetails where customers.customernumber = orders.customernumber and orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)= 2005 group by customers.customername order by sum(orderdetails.quantityordered*orderdetails.priceeach) desc;</code>
             <code class="codebox">SELECT customers.customername, sum(orderdetails.quantityordered*orderdetails.priceeach) as omzetPerKlant, year(orders.orderdate) from customers, orders, orderdetails where customers.customernumber = orders.customernumber and orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)= 2005 group by customers.customername order by omzetPerKlant desc;</code>
+        </div>
+        <div class="box center" id="proj1">
+            <h2 class="center">Mijn eerste Website</h2>
+            <a href="http://thomaseeckhout.hopto.org/">
+                <img src="images/Knipsel.PNG" alt="">
+            </a>
         </div>
         <div class="footer"></div>
     </div>
