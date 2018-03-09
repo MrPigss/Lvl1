@@ -20,7 +20,6 @@ a {
 
 }
 .link{
-    padding: 10px 0 0 0;
     font-size: 22px;
     display: block;
     color: white;
@@ -32,5 +31,16 @@ a {
 }
 a.link:hover{
     color: tomato;
-    background: #1d375d;
+    background: inherit;
+}
+.link.titel{
+    padding: .5rem 0;
+    border: none;
+    cursor:default; 
+}
+.link.titel:hover{
+    border: none;
+    color: inherit;
+    background:initial;
+    
 }

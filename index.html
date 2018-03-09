@@ -22,20 +22,41 @@
         <div class="center">
             <img id="toplogo" src="images/logo.png" alt="pig">
         </div>
-        <h1 class="center">MrPigss' Testpage.</h1>
+        <h1 class="center">MrPigss' Portfolio.</h1>
     </header>
     <div class="shape-separator"></div>
     <nav role="navigation">
         <div id="menu">
+            <a href="#" class="link titel">
+                Projecten
+            </a>
+            <a href="#proj1" class="link">
+                Eerste website
+            </a>
+            <a href="#proj2" class="link">
+                GIP Opdracht
+            </a>
+            <a href="#" class="link titel">
+                Voor IB
+            </a>
             <a href="#SQL" class="link">
                 SQL
-            </a>
-            <a href="#proj1" class="link titel">
-                Projecten
             </a>
         </div>
     </nav>
     <div class="content center">
+        <div class="box center" id="proj1">
+            <h2 class="center">Mijn eerste Website</h2>
+            <a href="http://thomaseeckhout.hopto.org/">
+                <img src="images/Knipsel.PNG" alt="">
+            </a>
+        </div>
+        <div class="box center" id="proj2">
+            <h2 class="center">GIP Opdracht 6de jaar</h2>
+            <a href="http://thomaseeckhout.hopto.org/">
+                <img src="images/Knipsel.PNG" alt="">
+            </a>
+        </div>
         <div class="box center" id="SQL">
             <h2 class="center">SQL</h2>
             <p>1. Je wil alle gegevens uit de tabel customers zien.</p>
@@ -105,12 +126,7 @@
             <code class="codebox">SELECT customers.customername, sum(orderdetails.quantityordered*orderdetails.priceeach) as omzetPerKlant, year(orders.orderdate) from customers, orders, orderdetails where customers.customernumber = orders.customernumber and orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)= 2005 group by customers.customername order by sum(orderdetails.quantityordered*orderdetails.priceeach) desc;</code>
             <code class="codebox">SELECT customers.customername, sum(orderdetails.quantityordered*orderdetails.priceeach) as omzetPerKlant, year(orders.orderdate) from customers, orders, orderdetails where customers.customernumber = orders.customernumber and orders.ordernumber = orderdetails.ordernumber and year(orders.orderdate)= 2005 group by customers.customername order by omzetPerKlant desc;</code>
         </div>
-        <div class="box center" id="proj1">
-            <h2 class="center">Mijn eerste Website</h2>
-            <a href="http://thomaseeckhout.hopto.org/">
-                <img src="images/Knipsel.PNG" alt="">
-            </a>
-        </div>
+
         <div class="footer"></div>
     </div>
 </body>
@@ -118,3 +134,5 @@
 <script src="js/main.js"></script>
 
 </html>
+
+http://edu.gusconet.be:3005/~thomas.eeckhout/gip/who_am_i.html
